@@ -9,6 +9,8 @@ const porta = process.env.PORT || 3000
 //indicar a pasta dos assets (css, js, images, webfonts)
 app.use(express.static('./src/'))
 
+//habilitar o express para receber os dados de formularios
+app.use(express.urlencoded({extended:false}))
 
 //importar o consign
 const consign = require('consign')
@@ -16,7 +18,5 @@ const consign = require('consign')
 consign().include('./routes').into(app)
 
 
-//habilitar o express para receber os dados de formularios
-app.use(express.urlencoded({extended:false}))
 
 module.exports = {app,porta}

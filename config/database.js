@@ -11,7 +11,7 @@ const modelo = mongoose.Schema({
     imagem:String,
     titulo:String,
     texto:String,
-    cadastradoem:{type:Date,dafault:Date.now}
+    cadastradoem:{type:Date,default:Date.now}
 })
 const conteudo = mongoose.model('conteudo',modelo)
 module.exports = {conteudo, conexao}
